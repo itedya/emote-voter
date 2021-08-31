@@ -21,11 +21,4 @@ export class BotController {
 
     return [];
   }
-
-  @Get("/status")
-  async getStatus() {
-    const status = this.botService.getStatus();
-
-    return { status };
-  }
 }

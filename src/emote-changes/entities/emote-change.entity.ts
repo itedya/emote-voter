@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-@Entity()
+@Entity("emote_changes")
 export class EmoteChangeEntity {
   @PrimaryGeneratedColumn("uuid")
   id: string;
@@ -14,7 +14,7 @@ export class EmoteChangeEntity {
   @Column({ type: "varchar" })
   serviceType: string;
 
-  @Column({ type: "datetime" })
+  @Column({ type: "datetime", nullable: true })
   voteEnds: Date;
 
   @Column({ type: "varchar", nullable: true })
@@ -25,6 +25,9 @@ export class EmoteChangeEntity {
 
   @Column({ type: "integer" })
   voteDown: number;
+
+  @Column({ type: "boolean", default: false })
+  completed: boolean;
 
   @CreateDateColumn()
   createdAt: Date;
