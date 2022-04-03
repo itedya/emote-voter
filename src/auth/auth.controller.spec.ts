@@ -20,13 +20,14 @@ describe('AuthController (e2e)', () => {
     await prismaService.user.deleteMany({});
   });
 
-  it('/register (POST)', async () => {
+  test('if /auth/register (POST) works', async () => {
     await request(app.getHttpServer()).post('/auth/register').expect(400);
 
     await request(app.getHttpServer())
       .post('/auth/register')
       .send({
         username: 'test_account',
+        email: 'test_account@localhost.local',
         password: 'test_account_password',
       })
       .expect(201);
