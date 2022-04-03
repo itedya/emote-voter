@@ -1,3 +1,5 @@
+import { Exclude } from 'class-transformer';
+
 export class UserDto {
   constructor(data: Partial<UserDto>) {
     Object.assign(this, data);
@@ -6,6 +8,7 @@ export class UserDto {
   id: number;
   username: string;
   email: string;
+  @Exclude()
   password: string;
   createdAt: Date;
 }
