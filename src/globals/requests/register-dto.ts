@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, Length } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsString, Length } from 'class-validator';
 
 export class RegisterDto {
   @IsNotEmpty({ message: 'Nazwa użytkownika nie może być pusta!' })
@@ -10,4 +10,10 @@ export class RegisterDto {
   @IsString({ message: 'Hasło musi być ciągiem znaków.' })
   @Length(8, 128, { message: 'Hasło musi mieć od 8 do 128 znaków.' })
   password: string;
+
+  @IsNotEmpty({ message: 'Email nie może być pusty!' })
+  @IsString({ message: 'Email musi być ciągiem znaków!' })
+  @IsEmail({}, { message: 'Email musi być emailem!' })
+  @Length(6, 128, { message: 'Email może mieć od 6 do 128 znaków.' })
+  email: string;
 }
