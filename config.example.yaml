@@ -1,2 +1,5 @@
 discord:
   token: YOUR-DISCORD-BOT-TOKEN
+jwt:
+  secret: JWT-SECRET
+  expires_at: 999999
