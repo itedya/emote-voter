@@ -30,4 +30,12 @@ export class UsersService {
 
     return new UserDto(result);
   }
+
+  async getByUsername(username: string) {
+    const result = await this.prismaService.user.findFirst({
+      where: { username },
+    });
+
+    return result === null ? null : new UserDto(result);
+  }
 }
