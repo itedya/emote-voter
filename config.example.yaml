@@ -1,5 +1,8 @@
 discord:
   token: YOUR-DISCORD-BOT-TOKEN
+  invite_uri: DISCORD-BOT-INVITE-URI
+  client_id: DISCORD-ID
+  client_secret: secret
 jwt:
   secret: JWT-SECRET
   expires_at: 999999
